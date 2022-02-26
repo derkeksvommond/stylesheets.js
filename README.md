@@ -25,8 +25,9 @@ css({
 
 A innovative change I did is the thing that you can select elements now by the attribute name. A table how to select elements is below.
 
-| element | _no prefix_ | body   | `<body>`              |   |
+| Type    | Prefix      | Example| Codeexample           |   |
 |---------|-------------|--------|-----------------------|---|
+| element | _no prefix_ | body   | `<body>`              |   |
 | id      | #           | #id    | `<div id="id">`       |   |
 | class   | .           | .class | `<div class="class">` |   |
 | name    | _           | \_name  | `<div name="name">`   |   |
