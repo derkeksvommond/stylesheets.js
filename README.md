@@ -2,7 +2,8 @@
 
 **This minimalistic JavaScript library makes it possible to make small CSS changes straight in your JavaScript-Code in a very beautifull way**
 
-## QuickstartSet this in the head tag of your html-file
+## Quickstart
+Set this in the head tag of your html-file
 ```html
 <script src="https://louanne.co/stylesheets.js"></script>
 ```
