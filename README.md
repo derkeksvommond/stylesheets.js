@@ -1,7 +1,7 @@
 # stylesheets.js
 
 **This minimalistic JavaScript library makes it possible to make small CSS changes straight in your JavaScript-Code in a very beautifull way**
-Anyways I am still working at it.
+Anyways I am still working at it. You overgive the changes you want to make as a JSON-Object. Pretty simple right? And of course much more beautifull than doing this: `document.getElementById("sixtynine").style.color = "#fff";`
 
 ## Quickstart
 Set this in the head tag of your html-file
@@ -33,8 +33,8 @@ A innovative change I did is the thing that you can select elements now by the a
 
 Unfortunately there are still many restrictions.
 
-> 1. You can't access pseudoelements like ::before oder ::after
-> 2. The same way we treated I treated pseudoactions\*
+> 1. You can't access pseudoelements like `::before` or `::after`
+> 2. The same way I treated pseudoactions\*
 > 3. Advanced ways like getting childelements and so on doesn't work too
 
 \* Shouldn't be a problem because of eventlisteners 
