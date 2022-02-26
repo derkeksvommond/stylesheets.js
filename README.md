@@ -25,12 +25,12 @@ css({
 
 A innovative change I did is the thing that you can select elements now by the attribute name. A table how to select elements is below.
 
-| Type    | Prefix      | Example| Codeexample           |   |
-|---------|-------------|--------|-----------------------|---|
-| element | _no prefix_ | body   | `<body>`              |   |
-| id      | #           | #id    | `<div id="id">`       |   |
-| class   | .           | .class | `<div class="class">` |   |
-| name    | _           | \_name  | `<div name="name">`   |   |
+| Type    | Prefix      | Example| Codeexample           |
+|---------|-------------|--------|-----------------------|
+| element | _no prefix_ | body   | `<body>`              |
+| id      | #           | #id    | `<div id="id">`       |
+| class   | .           | .class | `<div class="class">` |
+| name    | _           | \_name  | `<div name="name">`   |
 
 Unfortunately there are still many restrictions.
 
@@ -50,3 +50,19 @@ Now a list is following which css-rules are working:
 - border-radius
 - display
 - visibility
+
+## Errorcodes and their meaning
+
+| Code | Description                                          |
+|------|------------------------------------------------------|
+| 666  | Interesting error... Nobody knows how we got here :( |
+| 101  | Invalid Type. Type must be a number between 0 - 3.   |
+| 102  | Type must be a integer.
+
+Of course there are much more possible erros but at the moment they won't be detected by the library.
+
+## General Syntax
+1. Firstly you call the function `css();`
+2. With the function you overgive your JSON-Object `css({ "body": [{ "background-color": "#fff" }] })`
+                                                             &#8593;               &#8593;              &#8593;
+                                                             selector       rule         value
