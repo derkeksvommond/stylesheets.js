@@ -63,8 +63,7 @@ Of course there are much more possible erros but at the moment they won't be det
 
 ## General Syntax
 1. Firstly you call the function `css();`
-2. With the function you overgive your JSON-Object `css({ "body": [{ "background-color": "#fff" }] })`
+2. With the function you overgive your JSON-Object `css({ selector: [{ rule: value }] }
 
+**All selcetors, rules and values must be a string!**
 
-                                                             &#8593;               &#8593;              &#8593;
-                                                             selector       rule         value
