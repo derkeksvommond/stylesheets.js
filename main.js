@@ -145,21 +145,3 @@ function css(data) {
     }
     
 }
-
-window.addEventListener('load', function () {
-    css({
-        "body": [{
-            "background-color": "green",
-            "font-family": "sans-serif" 
-        }], 
-        
-        "#id": [{
-            "border": "solid 1px black"
-        }],
-        
-        ".class": [{
-            "opacity": "1",
-            "font-size": "20px"
-        }]
-    });
-})
