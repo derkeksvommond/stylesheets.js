@@ -86,3 +86,4 @@ Of course there are much more possible erros but at the moment they won't be det
 
 
 
+In case you're using this "software" please mention my work :)
