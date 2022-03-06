@@ -65,9 +65,8 @@ function getIt (type, unique_name) {
 }
 
 function disassemble(data) {
-    const formatted = JSON.parse(JSON.stringify(data));
 
-    const selectorList = Object.keys(formatted);
+    const selectorList = Object.keys(data);
     let typeList = [];
 
     for (selector in selectorList) {
