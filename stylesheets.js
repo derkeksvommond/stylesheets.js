@@ -5,10 +5,6 @@
     https://github.com/derkeksvommond
 */
 
-const capitalize_non = function(s) {
-    return s[0].toUpperCase() + s.slice(1);
-}
-
 function css(data) {
     let transformed = [];
     const firstLayer = Object.keys(data);
