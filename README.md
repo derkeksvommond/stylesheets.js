@@ -1,36 +1,29 @@
 # stylesheets.js
 
-**This minimalistic JavaScript library makes it possible to make small CSS changes straight in your JavaScript-Code in a very beautifull way**
-You overgive the changes you want to make as a JSON-Object. Pretty simple right? And of course much more beautifull than doing this: `document.getElementById("sixtynine").style.color = "#fff";`
+**stylesheets.js is a minimalistic JavaScript library which makes it possible to change CSS in a very beautiful way.** You overgive the function `css()` a JSON-object which looks very similar to CSS.
 
+Example:
+```js
+css() {
+    "#myID": {
+        "background-color": "red",      // you can use teh rules like in css
+        "backgoundColor": "yellow"      // or like in js
+    }
+}
+```
+---
 
 ## Quickstart
-Firstly download this file. After that set the linking into the head of your html-file.
-```html
-<script src="path/to/this/file/stylesheets.js"></script>
-```
+1. First you have to download the "stylesheets.js"-file out of this repository.
+2. Move it into your project folder and link it:
+   ```html
+   <script src="path/to/this/file/stylesheets.js"></script>
+   ``` 
 
-Now you can start editing the CSS of your webpage. The Syntax is quite simple.
-**Example:**
-```js
-css({
-    "body": {
-        "backgroundCcolor": "green",
-        "fontFamily": "sans-serif" 
-    }, 
-        
-    "#id": {
-        "border": "solid 1px black"
-     }],
-        
-    ".class": {
-        "opacity": "1",
-        "fontSize": "20px"
-    }
-});
-```
+3. Call the function `css( "div": {"border": {"solid 1px red" }})`.
 
-As JavaScript is executed from top to bottom you have to make sure the document is loaded before you call the function. In Case the function is getting executed by buttonclick this fact can be neglected. Otherwise you have to do it this way:
+**Make sure the function will be only executed if the ones concerned are alread loaded.** In case you want to apply your style right after calling the page you can use `eventListeners()` like so:
+
 ```js
 window.addEventListener('load', function () {
     css({
@@ -39,27 +32,50 @@ window.addEventListener('load', function () {
         }
     });
 ```
+---
+## Syntax
+The Synatx is as simple as in CSS.
 
-As shown in the table below you define selectors like in a normal CSS:
-| Type    | Prefix      | Example| Codeexample           |
-|---------|-------------|--------|-----------------------|
-| element | _no prefix_ | body   | `<body>`              |
-| id      | #           | #id    | `<div id="id">`       |
-| class   | .           | .class | `<div class="class">` |
+```js
+css({ selector: {rule: value} });
+```
+All values (value) and keys (rule, selector) must be a string
 
-Unfortunately there are still many restrictions.
+---
+## Restrictions
+Unfortunatly there are still many restriction:
+- defining of pseudo-elements
+- "advanced" ways of selecting a element (e.g.: `"body .childs {}"`)
+- pseudo-classes won't work too *
 
-> 1. You can't access pseudoelements like `::before` or `::after`
-> 2. The same way I treated pseudoactions\*
-> 3. Advanced ways like getting childelements and so on doesn't work too
+\* Even if it's not implemented yet you can effect the result in a very simple way:
 
-\* Shouldn't be a problem implementing yourselve because of eventlisteners 
+> **JavaScript**:
+```js
+let el = document.getElementById("mylink");
 
+el.addEventListener("mouseenter", 
+    function() {
+        css({
+            "#mylink" {
+                "color": "blue",
+                "text-decoration": "none"
+        });
 
-## General Syntax
-1. Firstly you call the function `css();`
-2. With the function you overgive your JSON-Object `css({ selector: { rule: value } }`
+        // here you could execute sth. else too
+    }
+;)
+```
 
-**All selcetors, rules and values must be a string!**
+> **CascadingStyleSheets**
+```css
+#mylink:hover {
+    color: blue;
+    text-decoration: none;
+}
+```
 
-In case you're using this "software" please mention my work :)
+Obviously it's more code but the clear proargumet is that you can execute anythiny else you want too.
+
+---
+In case you're using this "software" it'd honor you if you mention me :)
