@@ -1,5 +1,10 @@
 "use-strict";
 
+/*
+    @author: Philipp Hartmann
+    https://github.com/derkeksvommond
+*/
+
 const capitalize_non = function(s) {
     return s[0].toUpperCase() + s.slice(1);
 }
