@@ -46,8 +46,7 @@ function css(data) {
 
             for (l in transformed[j][1]) {
                 var command = `el.style.${transformed[j][1][l][0]} = "${transformed[j][1][l][1]}";`;
-                eval(command);
-                
+                Function(command)();
             }
         }
     }
