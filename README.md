@@ -8,6 +8,10 @@ css() {
     "#myID": {
         "background-color": "red",      // you can use the rules like in css
         "backgoundColor": "yellow"      // or like in js
+    },
+    
+    ".myClass": {
+        "border": "solid 1px red"
     }
 }
 ```
