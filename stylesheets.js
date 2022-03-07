@@ -1,20 +1,32 @@
 "use-strict";
 
-function css(data) {
+const capitalize_non = function(s) {
+    return s[0].toUpperCase() + s.slice(1);
+}
 
+function css(data) {
     let transformed = [];
     const firstLayer = Object.keys(data);
+
+    const capitalize = function(s) {
+        return s[0].toUpperCase() + s.slice(1);
+    }
     
     for (selector in firstLayer) {
         transformed.push([
             firstLayer[selector],[]
         ]);
 
-        const secondLayerKeys = Object.keys(data[firstLayer[selector]])
-        const secondLayerValues = Object.values(data[firstLayer[selector]])
+        let secondLayerKeys = Object.keys(data[firstLayer[selector]])
+        let secondLayerValues = Object.values(data[firstLayer[selector]])
         
 
         for (rule in secondLayerKeys) {
+            if (secondLayerKeys[rule].includes("-")) {
+                secondLayerKeys[rule] = secondLayerKeys[rule].split("-");
+                secondLayerKeys[rule] = secondLayerKeys[rule][0] + capitalize(secondLayerKeys[rule][1]);
+            }
+
             transformed[selector][1].push([
                 secondLayerKeys[rule],
                 secondLayerValues[rule]
