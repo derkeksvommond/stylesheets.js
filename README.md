@@ -13,19 +13,19 @@ Now you can start editing the CSS of your webpage. The Syntax is quite simple.
 **Example:**
 ```js
 css({
-    "body": [{
+    "body": {
         "background-color": "green",
         "font-family": "sans-serif" 
-    }], 
+    }, 
         
-    "#id": [{
+    "#id": {
         "border": "solid 1px black"
      }],
         
-    ".class": [{
+    ".class": {
         "opacity": "1",
         "font-size": "20px"
-    }]
+    }
 });
 ```
 
