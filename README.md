@@ -6,7 +6,7 @@ Example:
 ```js
 css() {
     "#myID": {
-        "background-color": "red",      // you can use teh rules like in css
+        "background-color": "red",      // you can use the rules like in css
         "backgoundColor": "yellow"      // or like in js
     }
 }
